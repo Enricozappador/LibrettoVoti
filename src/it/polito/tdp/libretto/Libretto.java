@@ -92,9 +92,10 @@ public boolean esisteGiaVoto(Voto v) {
 	  return (v.getPunti() == this.voti.get(pos).getPunti());
 }
 /**
- * Mi dice se il {@link Vtoto} {@code v} è in conflitto con uno dei  
+ * Mi dice se il {@link Voto} {@code v} è in conflitto con uno dei  
  * @param v
- * @return
+ * @return{@code true} se il voto esiste ed ha punteggio diverso, 
+ * {@code false} se il voto non esiste, oppure esiste ma ha lo stesso punteggio
  */
 
 public boolean votoConflitto(Voto v)
@@ -104,6 +105,9 @@ public boolean votoConflitto(Voto v)
 	  return false; 
 	 else 
 	  return (v.getPunti() != this.voti.get(pos).getPunti());	
+}
+public String toString() { 
+	return this.voti.toString();
 }
 	 
 	  
@@ -118,6 +122,31 @@ public boolean votoConflitto(Voto v)
 		return false; 
 	}
 	*/
+
+public Libretto librettoMigliorato() {
+	Libretto nuovo = new Libretto();
+	for (Voto v: nuovo.voti) {
+		
+		//nuovo.add(new Voto(v.getPunti(),v.getCorso(), v.getData())); ma meglio aggiungere clone in voto 
+		
+		 nuovo.add(v.clone());
+	}
+	for (Voto v: nuovo.voti) {
+		//v.setPunti(v.getPunti()+1);
+		int punti = v.getPunti();
+	
+		if (punti<24)
+			punti =punti+1 ;
+			else if (punti <= 28)
+				punti=punti+2;
+		v.setPunti(punti);
+		
+	}
+	
+	return nuovo;
+}
+
+
 
 }
 

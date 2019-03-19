@@ -45,6 +45,14 @@ public class Test_Libretto {
 		System.out.println(libr.add(mancante));
 		System.out.println(libr.toString()); 
 		
+		System.out.println("***Migliora il Libretto***"); 
+	
+		
+		Libretto.migliore = libr.librettoMigliorato(); 
+		
+		System.out.println(libr.toString());
+		System.out.println(migliore.toString()); 
+		
 	
 	}
 }
