@@ -146,6 +146,15 @@ public Libretto librettoMigliorato() {
 	return nuovo;
 }
 
+public void cancellaVotiScarsi() {
+	List<Voto> cancellare = new ArrayList<Voto>();
+	for(Voto v : this.voti) {
+		if(v.getPunti()<24) {
+			this.voti.remove(v);
+		}
+	}
+	this.voti.removeAll(cancellare);
+}
 
 
 }

@@ -48,10 +48,14 @@ public class Test_Libretto {
 		System.out.println("***Migliora il Libretto***"); 
 	
 		
-		Libretto.migliore = libr.librettoMigliorato(); 
+		Libretto migliore = libr.librettoMigliorato(); 
 		
 		System.out.println(libr.toString());
 		System.out.println(migliore.toString()); 
+		
+		migliore.cancellaVotiScarsi();
+		System.out.println(migliore.toString()); 
+		
 		
 	
 	}
