@@ -13,11 +13,17 @@ public class Libretto {
 /**
  *  aggiunge un nuovo voto al libretto 
  *   @param v il {@link Voto} da aggiungere
+ *   @return 
  */
-	public void add(Voto v) {
-		voti.add(v); 
+	public boolean add(Voto v) {
+		if (!this.esisteGiaVoto(v) && !this.votoConflitto(v)) {
+		voti.add(v);
+		return true;
 	}
-	
+		else {
+			return false; 
+		}
+	}
 	/**
 	 * Selezione il sottoinsieme di voti che hanno il punteggio specificato
 	 * @param punti punteggio da ricerca
