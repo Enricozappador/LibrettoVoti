@@ -83,8 +83,22 @@ public boolean esisteGiaVoto(Voto v) {
 	  if (pos==-1) 
 	  return false; 
 	 else 
-	  return (v.getPunti() == this.get(pos).getPunti());
-	 
+	  return (v.getPunti() == this.voti.get(pos).getPunti());
+}
+/**
+ * Mi dice se il {@link Vtoto} {@code v} è in conflitto con uno dei  
+ * @param v
+ * @return
+ */
+
+public boolean votoConflitto(Voto v)
+{
+	 int pos= this.voti.indexOf(v);
+	  if (pos==-1) 
+	  return false; 
+	 else 
+	  return (v.getPunti() != this.voti.get(pos).getPunti());	
+}
 	 
 	  
 	 
@@ -98,6 +112,6 @@ public boolean esisteGiaVoto(Voto v) {
 		return false; 
 	}
 	*/
-}
+
 }
 
